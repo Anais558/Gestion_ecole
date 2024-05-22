@@ -1,9 +1,24 @@
-const { Sequelize } = require('sequelize');
-require('dotenv').config();
-
-const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
-    host: process.env.DB_HOST,
-    dialect: 'mysql',
-});
-
-module.exports = sequelize;
+module.exports = {
+    development: {
+      username: 'root', // Remplacez par votre nom d'utilisateur MySQL
+      password: '', // Remplacez par votre mot de passe MySQL
+      database: 'gestion_ecole', // Remplacez par le nom de votre base de données
+      host: '127.0.0.1',
+      dialect: 'mysql'
+    },
+    test: {
+      username: 'root',
+      password: '',
+      database: 'database_test',
+      host: '127.0.0.1',
+      dialect: 'mysql'
+    },
+    production: {
+      username: 'root',
+      password: '',
+      database: 'database_production',
+      host: '127.0.0.1',
+      dialect: 'mysql'
+    }
+  };
+  
