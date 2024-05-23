@@ -5,6 +5,17 @@ const Class = require('./class');
 const Division = require('./division');
 const Eleve = require('./eleve');
 const Parents = require('./parent');
+const Note = require('./note');
+const Matiere = require('./matiere');
+const Professeur = require('./professeur');
+const FraisScolarite = require('./fraisScolarite');
+
+
+const MatiereProfesseur = sequelize.define('MatiereProfesseur', {});
+
+// Définir les relations
+Matiere.belongsToMany(Professeur, { through: MatiereProfesseur });
+Professeur.belongsToMany(Matiere, { through: MatiereProfesseur });
 
 const initDb = async () => {
     await sequelize.authenticate(); // Vérifiez la connexion à la base de données
@@ -18,4 +29,4 @@ const initDb = async () => {
     await Role.findOrCreate({ where: { name: 'admin' } });
 };
 
-module.exports = { initDb, User, Role, Class, Division, Eleve, Parents };
+module.exports = { initDb, User, Role, Class, Division, Note, Eleve, Parents, FraisScolarite, Matiere, Professeur, MatiereProfesseur };

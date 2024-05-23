@@ -6,9 +6,13 @@ const adminRoutes = require('./routes/adminRoutes');
 const classRoutes = require('./routes/classRoutes');
 const eleveRoutes = require('./routes/eleveRoutes');
 const parentRoutes = require('./routes/parentRoutes');
-const inscriptionRoutes = require('./routes/inscriptionRoutes'); // New route for inscriptions
-const presenceRoutes = require('./routes/presenceRoutes'); // New route for presences
-
+const inscriptionRoutes = require('./routes/inscriptionRoutes');
+const presenceRoutes = require('./routes/presenceRoutes');
+const personnelRoutes = require('./routes/personnelRoutes');
+const matiereRoutes = require('./routes/matiereRoutes');
+const professeurRoutes = require('./routes/professeurRoutes');
+const noteRoutes = require('./routes/noteRoutes');
+const fraisScolariteRoutes = require('./routes/fraisScolariteRoutes');
 
 
 
@@ -21,12 +25,13 @@ app.use('/api/admin', adminRoutes);
 app.use('/api', classRoutes);
 app.use('/api', eleveRoutes);
 app.use('/api', parentRoutes);
-app.use('/api', inscriptionRoutes); // Use the new route
-app.use('/api', presenceRoutes); // Use the new route
-
-
-
-
+app.use('/api', inscriptionRoutes); 
+app.use('/api', presenceRoutes); 
+app.use('/api', personnelRoutes); 
+app.use('/api', matiereRoutes);
+app.use('/api', noteRoutes);
+app.use('/api', professeurRoutes);
+app.use('/api', fraisScolariteRoutes);
 
 
 
